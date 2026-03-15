@@ -4,6 +4,7 @@ import Profile from './pages/Profile'
 import Onboarding from './pages/Onboarding'
 import Account from './pages/Account'
 import Auth from './pages/Auth'
+import Navbar from './components/layout/Navbar'
 
 function App() {
 
@@ -11,6 +12,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
@@ -18,6 +22,8 @@ function App() {
           <Route path="/account/:pathname" element={<Account />} />
           <Route path="/auth/:pathname" element={<Auth />} />
         </Routes>
+        </main>
+      </div>
       </BrowserRouter>
     </div>
   )
